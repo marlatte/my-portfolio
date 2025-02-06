@@ -1,6 +1,7 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
+  "author": "Walker Marlatt",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
