@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
+import Link from 'next/link';
+import { useState } from 'react';
 import {
   Asterisk,
   CodeSlash,
@@ -9,30 +9,30 @@ import {
   MusicNoteBeamed,
   Send,
   XLg,
-} from "react-bootstrap-icons";
+} from 'react-bootstrap-icons';
 
 export default function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const paths = [
     {
-      href: "/showcase",
-      text: "Showcase",
+      href: '/showcase',
+      text: 'Showcase',
       icon: <Asterisk className="text-neutral-400" />,
     },
     {
-      href: "/stack",
-      text: "Tech Stack",
+      href: '/stack',
+      text: 'Tech Stack',
       icon: <CodeSlash className="text-neutral-400" />,
     },
     {
-      href: "/music",
-      text: "Music",
+      href: '/music',
+      text: 'Music',
       icon: <MusicNoteBeamed className="text-neutral-400" />,
     },
     {
-      href: "/contact",
-      text: "Contact",
+      href: '/contact',
+      text: 'Contact',
       icon: <Send className="text-neutral-400" />,
     },
   ];

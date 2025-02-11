@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "./ui/header";
+import type { Metadata } from 'next';
+import './globals.css';
+import Header from './ui/header';
 
 export const metadata: Metadata = {
   title: "Walker's Work",
-  description: "Portfolio for Walker Marlatt",
+  description: 'Portfolio for Walker Marlatt',
 };
 
 export default function RootLayout({
