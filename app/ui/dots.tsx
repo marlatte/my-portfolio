@@ -17,12 +17,13 @@ export default function DotField() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight - 92;
 
-    const primary = '#5651e9';
+    const primary = 'rgb(86, 81, 233)';
     // const linkColor = 'rgb(81, 162, 233)'
-    const secondary = '#3df5c4';
+    const secondary = 'rgb(61, 245, 196)';
     const dotColors = [primary, primary, primary, secondary];
+    const numberOfParticles = Math.floor(canvas.width * 0.25);
 
-    const dotsArray: Dot[] = new Array(canvas.width * 0.25);
+    const dotsArray: Dot[] = new Array(numberOfParticles);
     for (let i = 0; i < dotsArray.length; i++) {
       const radius = Math.random() * 1.5 + 0.5;
       const dot: Dot = {
@@ -35,10 +36,20 @@ export default function DotField() {
       dotsArray[i] = dot;
     }
 
+    const mousePosition = {
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+    };
+
     function drawDot(dot: Dot) {
+      const dotDistance =
+        ((dot.x - mousePosition.x) ** 2 + (dot.y - mousePosition.y) ** 2) **
+        0.5;
+      const distanceRatio = dotDistance / (canvas.width / 2.1);
+
       ctx.beginPath();
       ctx.arc(dot.x, dot.y, dot.radius, 0, 2 * Math.PI, false);
-      ctx.fillStyle = dot.color;
+      ctx.fillStyle = dot.color.slice(0, -1) + `,${1 - distanceRatio})`;
       ctx.fill();
     }
 
