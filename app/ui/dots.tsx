@@ -45,7 +45,8 @@ export default function DotField() {
       const dotDistance =
         ((dot.x - mousePosition.x) ** 2 + (dot.y - mousePosition.y) ** 2) **
         0.5;
-      const distanceRatio = dotDistance / (canvas.width / 2.1);
+      const fadeStrength = canvas.width < 600 ? 1.7 : 2.1;
+      const distanceRatio = dotDistance / (canvas.width / fadeStrength);
 
       ctx.beginPath();
       ctx.arc(dot.x, dot.y, dot.radius, 0, 2 * Math.PI, false);
@@ -56,7 +57,8 @@ export default function DotField() {
     function animateDots() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      for (const dot of dotsArray) {
+      for (let i = 1; i < dotsArray.length; i++) {
+        const dot = dotsArray[i];
         const bounceX = dot.x >= canvas.width || dot.x <= 0;
         const bounceY = dot.y >= canvas.height || dot.y <= 0;
 
@@ -68,8 +70,21 @@ export default function DotField() {
         drawDot(dot);
       }
 
+      const mouseDot = dotsArray[0];
+      mouseDot.x = mousePosition.x;
+      mouseDot.y = mousePosition.y;
+      mouseDot.color = secondary;
+      mouseDot.radius = 2.5;
+      mouseDot.direction = { x: 0, y: 0 };
+      drawDot(mouseDot);
+
       window.requestAnimationFrame(animateDots);
     }
+
+    window.onmousemove = (mouse) => {
+      mousePosition.x = mouse.pageX;
+      mousePosition.y = mouse.pageY - 52; // Account for header height
+    };
 
     window.requestAnimationFrame(animateDots);
   }, []);
