@@ -20,9 +20,9 @@ export default function DotField() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight - 92;
 
-    const primary = 'rgb(86, 170, 236)';
+    const primary = 'rgb(110, 190, 255)';
     const secondary = 'rgb(52, 211, 153)';
-    const linkColor = 'rgb(34, 130, 106)';
+    const linkColor = 'rgb(8, 90, 50)';
     const dotColors = [primary, primary, primary, secondary];
     const numberOfParticles = Math.floor(canvas.width * 0.25);
 
