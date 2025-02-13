@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from './ui/header';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Walker's Work",
@@ -14,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex min-h-dvh flex-col antialiased">
+      <body
+        className={`${inter.className} flex min-h-dvh flex-col antialiased`}
+      >
         <Header />
         {children}
         <footer className="p-2 text-center">

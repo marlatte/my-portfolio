@@ -38,18 +38,18 @@ export default function Header() {
   ];
 
   return (
-    <header className="flex justify-between px-4 py-2 md:items-center">
+    <header className="z-20 flex justify-between px-4 py-2 md:items-center">
       <Link
-        className="font-mono text-3xl font-bold hover:text-neutral-300 md:mr-7"
+        className="font-mono text-3xl font-bold hover:text-emerald-200 md:mr-7"
         href="/"
       >
         Walker Marlatt
       </Link>
-      <div className="hidden gap-6 text-lg md:flex">
+      <div className="hidden gap-6 text-lg lg:flex">
         {paths.map((item) => {
           return (
             <Link
-              className="flex items-center gap-1.5 hover:text-neutral-300"
+              className="flex items-center gap-1.5 hover:text-emerald-200"
               key={item.href}
               href={item.href}
             >
@@ -59,7 +59,7 @@ export default function Header() {
           );
         })}
       </div>
-      <div className="flex flex-col items-end md:hidden">
+      <div className="flex flex-col items-end lg:hidden">
         <button type="button" onClick={() => setMenuIsOpen((cur) => !cur)}>
           {menuIsOpen ? (
             <XLg className="size-8" />
