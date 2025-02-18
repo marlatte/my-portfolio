@@ -65,3 +65,29 @@ body {
 .cta:active {
   transform: scale(0.99);
 }
+
+.mobile-dropdown {
+  transform-origin: top center;
+  display: none;
+  height: 0;
+}
+
+.mobile-dropdown.open {
+  animation: dropdown 400ms ease-in-out;
+  height: auto;
+  display: flex;
+}
+
+@keyframes dropdown {
+  from {
+    transform: scaleY(0);
+  }
+
+  80% {
+    transform: scaleY(1.1);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}

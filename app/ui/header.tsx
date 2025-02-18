@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import { useState } from 'react';
 import {
@@ -40,7 +41,7 @@ export default function Header() {
   return (
     <header className="z-20 flex justify-between px-4 py-2 md:items-center">
       <Link
-        className="font-mono text-3xl font-bold hover:text-emerald-200 md:mr-7"
+        className="font-mono text-2xl font-bold hover:text-emerald-200 lg:text-3xl"
         href="/"
       >
         Walker Marlatt
@@ -59,30 +60,42 @@ export default function Header() {
           );
         })}
       </div>
-      <div className="flex flex-col items-end lg:hidden">
-        <button type="button" onClick={() => setMenuIsOpen((cur) => !cur)}>
-          {menuIsOpen ? (
-            <XLg className="size-8" />
-          ) : (
-            <List className="size-8" />
-          )}
-        </button>
-        {menuIsOpen && (
-          <div className="absolute right-0 top-12 flex w-full flex-col items-end gap-y-3 bg-neutral-950 px-5 py-2 text-lg">
-            {paths.map((item) => {
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="flex items-center gap-2"
-                >
-                  {item.text}
-                  {item.icon}
-                </Link>
-              );
+      <div className="lg:hidden">
+        <button
+          type="button"
+          onClick={() => setMenuIsOpen((cur) => !cur)}
+          className="relative active:text-indigo-300"
+        >
+          <XLg
+            className={clsx('absolute size-8 scale-0 transition', {
+              'scale-100': menuIsOpen,
             })}
-          </div>
-        )}
+          />
+          <List
+            className={clsx('size-8 transition', {
+              'scale-0': menuIsOpen,
+            })}
+          />
+        </button>
+        <div
+          className={clsx(
+            'mobile-dropdown absolute right-0 top-12 flex w-full flex-col items-end gap-y-3 bg-neutral-950 px-5 pb-4 pt-2 text-lg',
+            { open: menuIsOpen },
+          )}
+        >
+          {paths.map((item) => {
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center gap-2"
+              >
+                {item.text}
+                {item.icon}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </header>
   );
