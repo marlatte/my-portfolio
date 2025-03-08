@@ -39,7 +39,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="z-20 flex justify-between px-4 py-2 md:items-center">
+    <header className="relative z-20 flex justify-between px-4 py-2 md:items-center">
       <Link
         className="font-mono text-2xl font-bold hover:text-emerald-200 lg:text-3xl"
         href="/"

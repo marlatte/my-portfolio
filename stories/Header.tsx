@@ -1,7 +1,4 @@
-import React from 'react';
-
 import { Button } from './Button';
-import './header.css';
 
 type User = {
   name: string;
@@ -14,11 +11,21 @@ export interface HeaderProps {
   onCreateAccount?: () => void;
 }
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
+export const Header = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount,
+}: HeaderProps) => (
   <header>
-    <div className="storybook-header">
-      <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <div className="flex items-center justify-between gap-3 border-b border-gray-500/50 px-5 py-4">
+      <div className="flex items-center gap-3">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <g fill="none" fillRule="evenodd">
             <path
               d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
@@ -34,12 +41,12 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1 className="text-xl font-bold">Acme</h1>
       </div>
-      <div>
+      <div className="flex items-center gap-3">
         {user ? (
           <>
-            <span className="welcome">
+            <span className="text-center text-sm text-gray-200">
               Welcome, <b>{user.name}</b>!
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
@@ -47,7 +54,12 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button
+              primary
+              size="small"
+              onClick={onCreateAccount}
+              label="Sign up"
+            />
           </>
         )}
       </div>
