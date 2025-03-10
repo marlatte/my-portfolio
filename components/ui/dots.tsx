@@ -39,7 +39,7 @@ export default function DotField() {
       dotsArray[i] = dot;
     }
 
-    const mousePosition = {
+    const mousePosition: Point = {
       x: canvas.width / 2,
       y: canvas.height / 2,
     };
@@ -87,6 +87,8 @@ export default function DotField() {
       }
     }
 
+    let animationID: number;
+
     function animateDots() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -118,7 +120,7 @@ export default function DotField() {
         drawDot(mouseDot, 0);
       }
 
-      window.requestAnimationFrame(animateDots);
+      animationID = window.requestAnimationFrame(animateDots);
     }
 
     // Only track mouse if on desktop
@@ -129,7 +131,11 @@ export default function DotField() {
       };
     }
 
-    window.requestAnimationFrame(animateDots);
+    animationID = window.requestAnimationFrame(animateDots);
+
+    return () => {
+      cancelAnimationFrame(animationID);
+    };
   }, []);
 
   return (
