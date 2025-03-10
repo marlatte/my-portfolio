@@ -66,6 +66,7 @@ export default function Header() {
           onClick={() => setMenuIsOpen((cur) => !cur)}
           className="relative active:text-indigo-300"
         >
+          <span className="sr-only">Menu</span>
           <XLg
             className={clsx('absolute size-8 scale-0 transition', {
               'scale-100': menuIsOpen,

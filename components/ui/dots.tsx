@@ -17,8 +17,8 @@ export default function DotField() {
   useEffect(() => {
     const canvas = document.getElementById('dot-field') as HTMLCanvasElement;
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight - 92;
+    canvas.width = canvas.parentElement!.clientWidth;
+    canvas.height = canvas.parentElement!.clientHeight;
 
     const primary = 'rgb(110, 190, 255)';
     const secondary = 'rgb(52, 211, 153)';

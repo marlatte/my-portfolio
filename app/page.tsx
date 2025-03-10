@@ -1,10 +1,10 @@
 import { ArrowDownShort } from 'react-bootstrap-icons';
-import DotField from './ui/dots';
+import DotField from '../components/ui/dots';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-1 basis-1 flex-col justify-stretch bg-neutral-900/80">
+    <div className="relative flex flex-1 flex-col justify-stretch bg-neutral-900/80">
       <DotField />
       <div className="flex-1" />
       <div className="z-10 px-5 text-center [text-shadow:1px_1px_5px_black;]">
@@ -16,7 +16,7 @@ export default function Home() {
           I&apos;m a full-stack software developer.
         </p>
       </div>
-      <div className="flex flex-1 basis-1 items-start justify-center">
+      <div className="flex flex-1 items-start justify-center">
         <Link
           href="#"
           className="cta mt-12 flex items-center gap-4 rounded-xl bg-indigo-950/60 px-4 py-2 font-medium text-indigo-300 ring-2 ring-indigo-600 backdrop-blur-[2px]"
