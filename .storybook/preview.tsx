@@ -1,9 +1,14 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import type { Preview } from '@storybook/react';
 import '../app/globals.css';
+import React from 'react';
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 const preview: Preview = {
   parameters: {
+    layout: 'fullscreen',
     nextjs: {
       appDirectory: true,
     },
@@ -23,6 +28,13 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+  decorators: [
+    (Story) => (
+      <div className={`${montserrat.className} text-neutral-200`}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default preview;

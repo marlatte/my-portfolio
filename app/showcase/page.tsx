@@ -71,3 +71,12 @@ export default function Page() {
     </div>
   );
 }
+
+/* 
+  <Link href="branfordvolunteers.org" className="text-sky-500">
+    BranfordVolunteers.org
+  </Link>{' '}
+  was the first iteration of what became the LocalVol platform, which
+  gives nonprofits a place to post their volunteering needs. I started as
+  its UX designer, using Figma to create a comprehensive wireframe. 
+*/
