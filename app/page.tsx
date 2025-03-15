@@ -6,7 +6,7 @@ import About from '@/components/ui/about';
 export default function Home() {
   return (
     <main className="flex-1">
-      <section className="relative flex h-dvh flex-col justify-stretch bg-neutral-900">
+      <section className="relative mt-[52px] flex h-dvh flex-col justify-stretch bg-neutral-900">
         <DotField />
         <div className="absolute bottom-0 z-20 h-32 w-full bg-gradient-to-t from-neutral-900 to-transparent" />
         <div className="flex-1" />
