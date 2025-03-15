@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +10,7 @@ body {
 
 .cta::before,
 .cta::after {
-  --bd-color: theme(colors.indigo.600);
+  --bd-color: var(--color-indigo-600);
   content: '';
   position: absolute;
   top: -1px;

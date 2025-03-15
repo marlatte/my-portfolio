@@ -3,13 +3,6 @@ import About from './about';
 
 const meta: Meta<typeof About> = {
   component: About,
-  decorators: [
-    (Story) => (
-      <div className="ring">
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 export default meta;

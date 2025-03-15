@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex-1">
       <section className="relative mt-[52px] flex h-dvh flex-col justify-stretch bg-neutral-900">
         <DotField />
-        <div className="absolute bottom-0 z-20 h-32 w-full bg-gradient-to-t from-neutral-900 to-transparent" />
+        <div className="absolute bottom-0 z-20 h-32 w-full bg-linear-to-t from-neutral-900 to-transparent" />
         <div className="flex-1" />
         <div className="z-10 px-5 text-center [text-shadow:1px_1px_5px_black;]">
           <h1 className="text-4xl md:text-5xl lg:text-6xl">
