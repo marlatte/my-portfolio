@@ -1,7 +1,7 @@
 import { ArrowDownShort } from 'react-bootstrap-icons';
 import DotField from '../components/ui/dots';
 import Link from 'next/link';
-import About from '@/components/ui/about';
+import About from '@/components/sections/about';
 
 export default function Home() {
   return (

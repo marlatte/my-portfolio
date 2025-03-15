@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { GlobeAmericas } from 'react-bootstrap-icons';
+import Heading from '../ui/styled-heading';
 
 function Skill({
   name,
@@ -31,11 +32,9 @@ function Skill({
 export default function About() {
   return (
     <section className="flex flex-col gap-5 px-5 py-14 xl:min-h-[90dvh]">
-      <h2 id="about" className="mb-4 scroll-m-20 text-center text-4xl">
-        <span className="relative inline-block px-3 before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-indigo-700">
-          <span className="relative font-medium text-white">About</span>
-        </span>
-      </h2>
+      <Heading level={2} id="about" className="mb-4 scroll-m-20">
+        About
+      </Heading>
       <div className="flex flex-1 flex-col items-center justify-evenly gap-10 lg:flex-row">
         <div className="flex max-w-xl flex-col gap-4 text-lg md:text-2xl">
           <div className="grid w-full place-content-center py-10">
