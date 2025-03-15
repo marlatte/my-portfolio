@@ -6,11 +6,36 @@ import { useState } from 'react';
 import {
   Asterisk,
   CodeSlash,
+  Github,
+  Linkedin,
   List,
   MusicNoteBeamed,
   Send,
   XLg,
 } from 'react-bootstrap-icons';
+
+function Socials() {
+  return (
+    <div className="ml-4 flex items-center gap-4">
+      <Link
+        target="_blank"
+        href="https://github.com/marlatte"
+        className="text-neutral-400 hover:text-neutral-300"
+      >
+        <span className="sr-only">Github</span>
+        <Github className="size-6" />
+      </Link>
+      <Link
+        target="_blank"
+        href="https://linkedin.com/in/walkermarlatt"
+        className="text-neutral-400 hover:text-neutral-300"
+      >
+        <span className="sr-only">LinkedIn</span>
+        <Linkedin className="size-6" />
+      </Link>
+    </div>
+  );
+}
 
 export default function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -46,7 +71,7 @@ export default function Header() {
       >
         Walker Marlatt
       </Link>
-      <div className="hidden gap-6 text-lg lg:flex">
+      <div className="hidden items-center gap-6 text-lg lg:flex">
         {paths.map((item) => {
           return (
             <Link
@@ -59,6 +84,7 @@ export default function Header() {
             </Link>
           );
         })}
+        <Socials />
       </div>
       <div className="flex lg:hidden">
         <button
@@ -96,6 +122,9 @@ export default function Header() {
               </Link>
             );
           })}
+          <div className="mr-7">
+            <Socials />
+          </div>
         </div>
       </div>
     </header>
