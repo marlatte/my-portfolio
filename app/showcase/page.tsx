@@ -1,8 +1,32 @@
+import Heading from '@/components/ui/styled-heading';
+import Link from 'next/link';
+
+// ! This should be in it's own file to be used elsewhere
+function TextLink({
+  href,
+  children,
+  external = false,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+}) {
+  return (
+    <Link
+      {...{ href }}
+      target={external ? '_blank' : '_self'}
+      className="text-sky-300 underline underline-offset-2 hover:text-sky-400"
+    >
+      {children}
+    </Link>
+  );
+}
+
 export default function Page() {
   return (
-    <div className="flex flex-1 flex-col bg-zinc-900 px-5 py-7">
-      <div className="flex flex-col gap-10 bg-zinc-800 p-4">
-        <h1 className="text-center text-4xl font-bold">Showcase</h1>
+    <div className="flex flex-1 flex-col px-5 py-7">
+      <div className="flex flex-col gap-10 p-4">
+        <Heading level={1}>Showcase</Heading>
         <p>
           This portfolio covers all the publicly available projects that
           I&apos;ve developed since starting my journey into software
@@ -16,9 +40,26 @@ export default function Page() {
             My most recent project is the LocalVol platform, a user-facing web
             app with a searchable database, events calendar, and job board to
             connect volunteers with nonprofits. LocalVol is the flagship product
-            of Antonym Partners, and originally shipped under the name
-            BranfordVolunteers.org. Backed by the Branford Community Foundation,
-            its initial release made the local news, both print and TV.
+            of Antonym Partners, and originally shipped under the name{' '}
+            <TextLink external href="https://branfordvolunteers.org">
+              BranfordVolunteers.org
+            </TextLink>
+            . Backed by the Branford Community Foundation, its initial release
+            made the local news, both{' '}
+            <TextLink
+              external
+              href="https://www.ctinsider.com/shoreline/article/branford-volunteers-nonprofit-groups-website-19959224.php"
+            >
+              print
+            </TextLink>{' '}
+            and{' '}
+            <TextLink
+              external
+              href="https://www.youtube.com/watch?v=tzjTc0z0fnw"
+            >
+              television
+            </TextLink>
+            .
           </p>
           {/* Add tech used, images, links, etc */}
         </div>
@@ -71,12 +112,3 @@ export default function Page() {
     </div>
   );
 }
-
-/* 
-  <Link href="branfordvolunteers.org" className="text-sky-500">
-    BranfordVolunteers.org
-  </Link>{' '}
-  was the first iteration of what became the LocalVol platform, which
-  gives nonprofits a place to post their volunteering needs. I started as
-  its UX designer, using Figma to create a comprehensive wireframe. 
-*/
