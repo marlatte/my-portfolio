@@ -39,7 +39,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed z-30 flex w-full justify-between bg-neutral-950 px-5 py-2 md:items-center">
+    <header className="fixed z-30 flex h-14 w-full items-center justify-between bg-neutral-950 px-5 py-2">
       <Link
         className="font-mono text-2xl font-bold hover:text-emerald-200 lg:text-3xl"
         href="/"
@@ -60,7 +60,7 @@ export default function Header() {
           );
         })}
       </div>
-      <div className="lg:hidden">
+      <div className="flex lg:hidden">
         <button
           type="button"
           onClick={() => setMenuIsOpen((cur) => !cur)}
@@ -80,7 +80,7 @@ export default function Header() {
         </button>
         <div
           className={clsx(
-            'mobile-dropdown absolute right-0 top-12 flex w-full flex-col items-end gap-y-3 bg-neutral-950 px-5 pb-4 pt-2 text-lg',
+            'mobile-dropdown absolute top-12 right-0 flex w-full flex-col items-end gap-y-3 bg-neutral-950 px-5 pt-2 pb-4 text-lg',
             { open: menuIsOpen },
           )}
         >
