@@ -1,26 +1,5 @@
 import Heading from '@/components/ui/styled-heading';
-import Link from 'next/link';
-
-// ! This should be in it's own file to be used elsewhere
-function TextLink({
-  href,
-  children,
-  external = false,
-}: {
-  href: string;
-  children: React.ReactNode;
-  external?: boolean;
-}) {
-  return (
-    <Link
-      {...{ href }}
-      target={external ? '_blank' : '_self'}
-      className="text-sky-300 underline underline-offset-2 hover:text-sky-400"
-    >
-      {children}
-    </Link>
-  );
-}
+import TextLink from '@/components/ui/text-link';
 
 export default function Page() {
   return (

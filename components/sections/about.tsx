@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { GlobeAmericas } from 'react-bootstrap-icons';
 import Heading from '../ui/styled-heading';
+import TextLink from '../ui/text-link';
 
 function Skill({
   name,
@@ -38,20 +39,14 @@ export default function About() {
       <div className="flex flex-1 flex-col items-center justify-evenly gap-10 lg:flex-row">
         <div className="flex max-w-xl flex-col gap-4 text-lg md:text-2xl">
           <div className="grid w-full place-content-center py-10">
-            <GlobeAmericas className="size-28 fill-emerald-500 xl:size-32" />
+            <GlobeAmericas className="size-28 fill-emerald-600 xl:size-32" />
           </div>
           <p>
             I&apos;m a professional web developer and public servant with broad
             experience across the startup, nonprofit, education, and private
             sectors. I built my first full-stack web app 1 year after learning
             to code. As a lifelong learner, I am always adding{' '}
-            <Link
-              href="/stack"
-              className="text-sky-500 underline underline-offset-2 hover:text-sky-600"
-            >
-              tools to my tool belt
-            </Link>
-            .
+            <TextLink href="/stack">tools to my tool belt</TextLink>.
           </p>
           <p>
             While I work mostly in the JavaScript ecosystem (think React,
