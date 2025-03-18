@@ -11,14 +11,10 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.config({
-    extends: [
-      'next/core-web-vitals',
-      'next/typescript',
-      'plugin:@stylistic/recommended-extends',
-      'prettier',
-    ],
+    extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
     rules: {
       quotes: ['error', 'single', { avoidEscape: true }],
+      'react/jsx-curly-brace-presence': ['error'],
     },
   }),
 ];

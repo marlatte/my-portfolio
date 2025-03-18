@@ -10,7 +10,7 @@ export default function Home() {
         <DotField />
         <div className="absolute bottom-0 z-20 h-32 w-full bg-linear-to-t from-neutral-900 to-transparent" />
         <div className="flex-1" />
-        <div className="z-10 px-5 text-center [text-shadow:1px_1px_5px_black;]">
+        <div className="z-10 px-5 text-center [text-shadow:1px_1px_5px_var(--color-neutral-950);]">
           <h1 className="text-4xl md:text-5xl lg:text-6xl">
             Hello, I&apos;m{' '}
             <span className="font-medium text-emerald-500">Walker</span>.

@@ -24,7 +24,7 @@ export default function DotField() {
     const secondary = 'rgb(52, 211, 153)';
     const linkColor = 'rgb(8, 90, 50)';
     const dotColors = [primary, primary, primary, secondary];
-    const numberOfParticles = Math.floor(canvas.width * 0.25);
+    const numberOfParticles = Math.min(Math.floor(canvas.width * 0.25), 400);
 
     const dotsArray: Dot[] = new Array(numberOfParticles);
     for (let i = 0; i < dotsArray.length; i++) {
