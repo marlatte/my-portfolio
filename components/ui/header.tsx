@@ -115,6 +115,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => setMenuIsOpen((cur) => !cur)}
                 className="flex items-center gap-2"
               >
                 {item.text}
