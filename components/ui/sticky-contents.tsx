@@ -13,7 +13,7 @@ export default function Contents({ sections }: { sections: string[] }) {
   return (
     <>
       <div
-        className={clsx('p-4 pb-0 transition-all lg:hidden', {
+        className={clsx('transition-all lg:hidden', {
           'h-8': !isOpen,
         })}
       >
@@ -25,7 +25,7 @@ export default function Contents({ sections }: { sections: string[] }) {
           <h2 className="text-xl">Contents</h2>
           <ChevronDown
             className={clsx('size-4 transition duration-300', {
-              'rotate-90': !isOpen,
+              'rotate-180': isOpen,
             })}
           />
         </button>
@@ -45,7 +45,7 @@ export default function Contents({ sections }: { sections: string[] }) {
           ))}
         </div>
       </div>
-      <div className="sticky top-16 hidden h-fit pt-4 pl-4 lg:block">
+      <div className="sticky top-16 hidden h-fit pl-4 lg:block">
         <h2 className="text-xl">Contents</h2>
         <div className="flex min-w-32 flex-col gap-2">
           {sections.map((title) => (

@@ -1,34 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Heading from '../ui/styled-heading';
+import Skill from '../ui/tech-skill';
 import TextLink from '../ui/text-link';
-
-function Skill({
-  name,
-  src,
-  href,
-}: {
-  name: string;
-  src: string;
-  href: string;
-}) {
-  return (
-    <Link
-      {...{ href }}
-      target="_blank"
-      className="flex size-24 flex-col items-center justify-center gap-1 rounded-full border-2 border-indigo-400 transition hover:bg-indigo-600/10 sm:size-28 lg:size-36"
-    >
-      <Image
-        alt={`${name} logo`}
-        width={100}
-        height={100}
-        className="size-11 lg:size-16"
-        {...{ src }}
-      />
-      <p className="hidden text-xs sm:block lg:text-base">{name}</p>
-    </Link>
-  );
-}
 
 export default function About() {
   return (

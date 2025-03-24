@@ -12,7 +12,7 @@ function CodeInline({ children }: { children: React.ReactNode }) {
 
 export default function Page() {
   return (
-    <div className="flex flex-col px-4 py-7">
+    <div className="flex flex-col px-4 py-7 text-pretty">
       <Heading level={1} className="pt-5 pb-7">
         Showcase
       </Heading>
@@ -29,7 +29,7 @@ export default function Page() {
         />
         <div>
           <div className="mb-14">
-            <div className="float-right mx-3 mb-1 grid place-content-center rounded-lg bg-indigo-900 px-2 py-1">
+            <div className="float-right mb-0.5 ml-3 grid place-content-center rounded-lg bg-indigo-900 px-2 py-1">
               <Laptop className="size-12 fill-indigo-300 md:size-20" />
             </div>
             <p>
@@ -90,7 +90,7 @@ export default function Page() {
                 Built as part of a challenge, I finished this browser-based
                 weather app in just 2.5 days. I used Next.js to scaffold it
                 quickly, TypeScript to keep it bug-free, Tremor to graph data,
-                and Tailwind to give it a consistent style. It uses{' '}
+                and TailwindCSS to give it consistent styles. It uses{' '}
                 <CodeInline> localStorage</CodeInline> to keep track of
                 users&apos; favorite cities and fetches its data from
                 OpenWeather&apos;s{' '}
@@ -111,7 +111,7 @@ export default function Page() {
             </ShowcaseEntry>
             <ShowcaseEntry
               title="Portfolio"
-              subtitle="this === window; // true"
+              subtitle="Showing off in Cascading Style"
               href="https://github.com/marlatte/my-portfolio"
               image={{
                 src: '/showcase/portfolio-home.png',
@@ -120,7 +120,7 @@ export default function Page() {
             >
               <p>
                 Listing <CodeInline>my-portfolio</CodeInline> in my portfolio?
-                Now that&apos;s some good recursion! The{' '}
+                That&apos;s the kind of recursion we can all get behind! The{' '}
                 <TextLink
                   external
                   href="https://github.com/marlatte/my-portfolio/blob/main/components/ui/dots.tsx"
@@ -132,7 +132,7 @@ export default function Page() {
                 Pro-tip, refresh the page if the <CodeInline>canvas</CodeInline>{' '}
                 element isn&apos;t resizing.
               </p>
-              <p className="mt-3">Built with all my favorites:</p>
+              <p className="mt-3">Built with some of my favorites:</p>
               <ul className="list-inside list-disc">
                 <li>TypeScript</li>
                 <li>
@@ -142,7 +142,7 @@ export default function Page() {
                 </li>
                 <li>React</li>
                 <li>Next.js</li>
-                <li>Tailwind</li>
+                <li>TailwindCSS</li>
               </ul>
             </ShowcaseEntry>
             <ShowcaseEntry
