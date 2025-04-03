@@ -56,11 +56,11 @@ export default function Showcase() {
               }}
             >
               <p>
-                My most recent project is the LocalVol platform, a user-facing
-                web app with a searchable database, events calendar, and job
-                board to connect volunteers with nonprofits. LocalVol is the
-                flagship product of Antonym Partners, and originally shipped
-                under the name{' '}
+                My current project is the LocalVol platform, a user-facing web
+                app with a searchable database, events calendar, and job board
+                to connect volunteers with nonprofits. LocalVol is the flagship
+                product of Antonym Partners, and originally shipped under the
+                name{' '}
                 <TextLink external href="https://branfordvolunteers.org">
                   BranfordVolunteers.org
                 </TextLink>

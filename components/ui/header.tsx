@@ -123,7 +123,7 @@ export default function Header() {
               </Link>
             );
           })}
-          <div className="mr-7">
+          <div className="mt-1 mr-7">
             <Socials />
           </div>
         </div>
