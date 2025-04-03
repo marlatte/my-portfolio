@@ -3,8 +3,13 @@ import Image from 'next/image';
 import albumArt from '@/public/music/something-simple-art.jpg';
 import { Apple, Spotify } from 'react-bootstrap-icons';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: 'Music',
+};
+
+export default function Music() {
   return (
     <div className="flex flex-col items-center gap-7 px-6 py-7 text-pretty">
       <Heading level={1} className="pt-5">

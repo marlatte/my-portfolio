@@ -1,7 +1,12 @@
 import Heading from '@/components/ui/styled-heading';
 import Skill from '@/components/ui/tech-skill';
+import { Metadata } from 'next';
 
-export default function Page() {
+export const metadata: Metadata = {
+  title: 'Tech Stack',
+};
+
+export default function Stack() {
   // TODO: Split into comforts, familiarities, and future plans
   const logos = [
     {

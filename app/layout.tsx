@@ -2,7 +2,10 @@ import Root from '@/components/layouts/root';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Walker's Work",
+  title: {
+    template: "%s | I'm Walking Here!",
+    default: "I'm Walking Here!",
+  },
   description: 'Portfolio for Walker Marlatt',
 };
 

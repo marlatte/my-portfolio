@@ -3,6 +3,11 @@ import Heading from '@/components/ui/styled-heading';
 import TextLink from '@/components/ui/text-link';
 import Contents from '@/components/ui/sticky-contents';
 import ShowcaseEntry from '@/components/ui/showcase-item';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Showcase',
+};
 
 function CodeInline({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +15,7 @@ function CodeInline({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function Page() {
+export default function Showcase() {
   return (
     <div className="flex flex-col px-4 py-7 text-pretty">
       <Heading level={1} className="pt-5 pb-7">
