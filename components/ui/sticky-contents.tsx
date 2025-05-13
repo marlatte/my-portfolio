@@ -47,12 +47,13 @@ export default function Contents({ sections }: { sections: string[] }) {
       </div>
       <div className="sticky top-16 hidden h-fit pl-4 lg:block">
         <h2 className="text-xl">Contents</h2>
-        <div className="flex min-w-32 flex-col gap-2">
+        <div className="flex min-w-32 flex-col gap-3 leading-tight">
           {sections.map((title) => (
             <TextLink
               key={title}
               onClick={closeContents}
               href={`#${title.split(' ').join('')}`}
+              className="whitespace-nowrap"
             >
               {title}
             </TextLink>

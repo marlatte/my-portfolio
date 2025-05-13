@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 
 function CodeInline({ children }: { children: React.ReactNode }) {
   return (
-    <code className="rounded-md bg-neutral-950 px-1 py-0.5">{children}</code>
+    <code className="rounded-md bg-neutral-950 px-1 py-0.5 text-neutral-300">
+      {children}
+    </code>
   );
 }
 
@@ -24,12 +26,16 @@ export default function Showcase() {
       <div className="flex h-full flex-col gap-4 lg:flex-row lg:pr-32 lg:text-lg">
         <Contents
           sections={[
-            'LocalVol',
+            'YourTown Volunteers',
+            'Remarkable AI',
+            'ClimaCast',
+            'Portfolio',
             'Yuedpao',
             'RichMind FC',
             'ASSET',
             'Tic Tac Toe',
             'Todo Web App',
+            'Rock Paper Scissors',
           ]}
         />
         <div>
@@ -47,7 +53,7 @@ export default function Showcase() {
           </div>
           <div className="grid grid-cols-1 gap-10">
             <ShowcaseEntry
-              title="LocalVol"
+              title="YourTown Volunteers"
               subtitle="A Volunteer Jobs Board"
               href="https://branfordvolunteers.org"
               image={{
@@ -56,11 +62,11 @@ export default function Showcase() {
               }}
             >
               <p>
-                My current project is the LocalVol platform, a user-facing web
-                app with a searchable database, events calendar, and job board
-                to connect volunteers with nonprofits. LocalVol is the flagship
-                product of Antonym Partners, and originally shipped under the
-                name{' '}
+                My current project is the YourTown Volunteers platform, a
+                user-facing web app with a searchable database, events calendar,
+                and job board to connect volunteers with nonprofits. YourTown
+                Volunteers is the flagship product of Antonym Partners, and
+                originally shipped under the name{' '}
                 <TextLink external href="https://branfordvolunteers.org">
                   BranfordVolunteers.org
                 </TextLink>
@@ -81,6 +87,52 @@ export default function Showcase() {
                 </TextLink>
                 .
               </p>
+            </ShowcaseEntry>
+            <ShowcaseEntry
+              title="Remarkable AI"
+              subtitle="An AI soccer analyst"
+              href="https://github.com/marlatte/remarkable-ai"
+              image={{
+                src: '/showcase/remarkable-ai.png',
+                alt: 'A screenshot of a message chain with the chatbot',
+              }}
+            >
+              <p>
+                This was my first AI project, and the goal was to design and
+                ship a feature-complete, AI-powered assistant. I built it
+                end-to-end, from model prompting and data sourcing to frontend
+                interaction and UX polish. To make it more fun, I had the
+                chatbot talk like Ted Lasso.
+              </p>
+              <p className="mt-3">
+                The LLM connects to this Next.js app with Vercel&apos;s{' '}
+                <TextLink external href="https://ai-sdk.dev/docs/introduction">
+                  AI SDK
+                </TextLink>
+                , while soccer data is gathered from{' '}
+                <TextLink
+                  external
+                  href="https://www.api-football.com/documentation-v3"
+                >
+                  API-FOOTBALL
+                </TextLink>
+                . I limited the scope of this assistant to just the English
+                Premier League to reduce complexity in what is ultimately an
+                MVP. The API&apos;s free tier is restricted to the 2021-2023
+                seasons.
+              </p>
+              <p className="mt-3">Other details:</p>
+              <ul className="list-inside list-disc">
+                <li>Generative UI based on user questions.</li>
+                <li>Light / Dark Mode.</li>
+                <li>
+                  UI components built with{' '}
+                  <TextLink external href="https://ui.shadcn.com/">
+                    shadcn/ui
+                  </TextLink>
+                  .
+                </li>
+              </ul>
             </ShowcaseEntry>
             <ShowcaseEntry
               title="ClimaCast"
